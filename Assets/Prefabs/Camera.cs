@@ -9,7 +9,7 @@ public class CameraOrbit : MonoBehaviour
     [SerializeField] public Transform targettopelement;
     [SerializeField] public float CameraHeight;
 
-    [SerializeField] public GameObject cube;
+    [SerializeField] public GameObject PieceToSpawn;
 
     public float rotationSpeed = 80f;
     private float distance     = 0.5f;
@@ -72,10 +72,9 @@ public class CameraOrbit : MonoBehaviour
                 break;
         }
 
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(cube, targettopelement.position, Quaternion.identity);
+            Instantiate(PieceToSpawn, targettopelement.position, Quaternion.identity);
 
         }
     }

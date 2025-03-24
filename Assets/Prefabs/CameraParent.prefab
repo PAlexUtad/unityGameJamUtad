@@ -140,5 +140,5 @@ MonoBehaviour:
   targetperspective: {fileID: 0}
   targettopelement: {fileID: 0}
   CameraHeight: 5
-  cube: {fileID: 8585675145598112128, guid: cecc64f8b57ef00488509a4bd5962557, type: 3}
+  PieceToSpawn: {fileID: 0}
   rotationSpeed: 80

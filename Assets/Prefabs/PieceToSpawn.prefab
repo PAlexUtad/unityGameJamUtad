@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 736916412592780124}
   - component: {fileID: 6628360114783837037}
   - component: {fileID: 8054084993217730861}
+  - component: {fileID: -3290704309711778313}
   m_Layer: 0
   m_Name: PieceToSpawn
   m_TagString: Untagged
@@ -129,7 +130,27 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-3290704309711778313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8585675145598112128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424c7553d3feeed4b934525fa2e34846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTransform: {fileID: 0}
+  shape: 0
+  mesh1: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  mesh2: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  mesh3: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  mesh4: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  MeshesList:
+  - {fileID: 0}
