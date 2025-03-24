@@ -14,6 +14,12 @@ public class CameraOrbit : MonoBehaviour
     public float rotationSpeed = 80f;
     private float distance     = 0.5f;
 
+    private Vector3 offset;
+
+    public float heightChangeSpeed = 1f;
+    public float minHeight = 1f;
+    public float maxHeight = 100f;
+
     //true  = vista perspectiva
     //false = vista top
     private bool typeofview = true; 
@@ -27,7 +33,7 @@ public class CameraOrbit : MonoBehaviour
         }
 
         // Calcular la distancia inicial y ángulo de la cámara respecto al target
-        Vector3 offset = transform.position - targetperspective.position;
+        offset         = transform.position - targetperspective.position;
         distance       = offset.magnitude * distance;
         CameraHeight   = Quaternion.LookRotation(offset).eulerAngles.y;
     }
@@ -41,6 +47,8 @@ public class CameraOrbit : MonoBehaviour
             distance -= Time.deltaTime;
         if (Input.GetKey(KeyCode.S))
             distance += Time.deltaTime;
+
+
 
         // cambiar tipo camara
         if (Input.GetKeyDown(KeyCode.Space))
@@ -61,6 +69,22 @@ public class CameraOrbit : MonoBehaviour
 
                 transform.position = newPosition;
                 transform.position = new Vector3(transform.position.x, transform.position.y + 10, transform.position.z);
+
+                /*
+                if(Input.GetKeyDown(KeyCode.E))
+                {
+                    offset.y += heightChangeSpeed * Time.deltaTime;
+                    offset.y = Mathf.Clamp(offset.y, minHeight, maxHeight);
+                    transform.position += offset;
+                }
+
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    offset.y -= heightChangeSpeed * Time.deltaTime;
+                    offset.y = Mathf.Clamp(offset.y, minHeight, maxHeight);
+                    transform.position += offset;
+                }
+                */
                 transform.LookAt(targetperspective);
                 break;
             case 0:
