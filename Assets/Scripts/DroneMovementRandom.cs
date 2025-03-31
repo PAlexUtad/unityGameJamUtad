@@ -30,7 +30,7 @@ public class DroneMovementRandom : MonoBehaviour
     float randomX = Random.Range(pos.x - size.x / 2f, pos.x + size.x / 2f);
     float randomZ = Random.Range(pos.z - size.z / 2f, pos.z + size.z / 2f);
 
-    return new Vector3(randomX, pos.y + offsetAltitud, randomZ);
+    return new Vector3(randomX, transform.position.y, randomZ);
   }
   // Start is called before the first frame update
   void Start()
