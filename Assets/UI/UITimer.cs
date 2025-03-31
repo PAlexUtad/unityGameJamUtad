@@ -6,26 +6,29 @@ using TMPro;
 public class UITimer : MonoBehaviour
 {
     public TMP_Text tex;
-    public float countdown = 300;
+    //public float countdown;
     float time_elapsed;
     float initial_value;
-
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
-        initial_value = countdown;
+        initial_value = ManagerTarget.Instance.targetCountdown;
     }
 
     void Update()
     {
         if (tex) 
         { 
-            if (countdown > 0)
+            if (ManagerTarget.Instance.targetCountdown > 0)
             {
-                countdown -= Time.deltaTime;
-                time_elapsed = initial_value - countdown;
+                ManagerTarget.Instance.targetCountdown -= Time.deltaTime;
+                time_elapsed = initial_value - ManagerTarget.Instance.targetCountdown;
             }
-            float min = Mathf.FloorToInt(countdown / 60);
-            float sec = Mathf.FloorToInt(countdown % 60);
+            float min = Mathf.FloorToInt(ManagerTarget.Instance.targetCountdown / 60);
+            float sec = Mathf.FloorToInt(ManagerTarget.Instance.targetCountdown % 60);
             tex.text = string.Format("{0,00}:{1,00}", min, sec);
             //Minutes and seconds calculation for elapsed time
             float min_e = Mathf.FloorToInt(time_elapsed / 60);

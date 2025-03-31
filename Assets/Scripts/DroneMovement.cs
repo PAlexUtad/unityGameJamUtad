@@ -7,9 +7,9 @@ using UnityEngine;
 public class DroneMovement : MonoBehaviour
 {
   //waypoints
-  public Transform[] waypoints; 
-  //current waypoint
-  private int currentWaypointIndex = 0;
+  public Transform[] waypoints;
+    //current waypoint
+    private int currentWaypointIndex = 0;
   //Speed
   public float speed = 5f; 
   // Start is called before the first frame update

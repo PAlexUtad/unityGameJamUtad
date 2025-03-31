@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 4152580063482736493}
   - component: {fileID: 4625959368851235198}
   - component: {fileID: 7148904973609382590}
+  - component: {fileID: 6006914880521258794}
   m_Layer: 0
   m_Name: DronTemp
   m_TagString: Untagged
@@ -230,9 +231,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  area: {fileID: 0}
+  area: {fileID: 5158205743829966469, guid: 29c553f4c4b605a4494b4e464e4fb7d1, type: 3}
   endFlyTime: 5
   offsetAltitud: 0
+--- !u!114 &6006914880521258794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4378084446901390336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba32a5ef171b3e48b5fb7268259c5eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  piecePrefab: {fileID: 0}
+  maxIndexWaypoint: 0
 --- !u!1 &4674631282495460829
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,9 +6,12 @@ using TMPro;
 public class UIScore : MonoBehaviour
 {
     public TMP_Text tex;
-    public int PiecesAmt;
-    public float TowerHeight;
-
+    //public int PiecesAmt;
+    //public float TowerHeight;
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
     }
@@ -17,7 +20,7 @@ public class UIScore : MonoBehaviour
     {
         if (tex)
         {
-            tex.text = (PiecesAmt * TowerHeight).ToString();
+            tex.text = (ManagerTarget.Instance.targetPiecesAmount * ManagerTarget.Instance.targetHeight).ToString();
         }
     }
 
