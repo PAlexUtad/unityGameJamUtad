@@ -45,10 +45,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   droneRoot: {fileID: 0}
-  dronePrefab: {fileID: 0}
-  piecesList: []
-  spawnBoundsX: {x: 0, y: 0}
-  spawnBoundsY: {x: 0, y: 0}
+  pieceRoot: {fileID: 0}
+  dronePrefab: {fileID: 4378084446901390336, guid: 474198760a21d0644a9f20ec3e5dcfac, type: 3}
+  piecePrefab: {fileID: 6223372586664389701, guid: d48a20eb03e16164487c8963362d3b99, type: 3}
+  piecesList:
+  - {fileID: -5495902117074765545, guid: 90f8e10aa0965f046a6dd9e08bf2ea6d, type: 3}
+  - {fileID: 4493585093827132993, guid: 90f8e10aa0965f046a6dd9e08bf2ea6d, type: 3}
+  - {fileID: -1550514412580984892, guid: 90f8e10aa0965f046a6dd9e08bf2ea6d, type: 3}
+  - {fileID: -8678823145569952518, guid: 90f8e10aa0965f046a6dd9e08bf2ea6d, type: 3}
+  - {fileID: -5053925668127403250, guid: 90f8e10aa0965f046a6dd9e08bf2ea6d, type: 3}
+  - {fileID: 2212009239438826721, guid: 90f8e10aa0965f046a6dd9e08bf2ea6d, type: 3}
+  pieceMaterialActive: {fileID: 2100000, guid: 2ba046b25d5df544085f1e8eb999fd22, type: 2}
+  Floor: {fileID: 5158205743829966469, guid: 29c553f4c4b605a4494b4e464e4fb7d1, type: 3}
   maxDronesAlive: 5
   generationRateSeconds: 2
-  lifetimeDrone: 5
+  targetHeight: 2

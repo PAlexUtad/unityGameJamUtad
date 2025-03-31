@@ -8,12 +8,16 @@ public class DroneGenerator : MonoBehaviour
     public static DroneGenerator Instance;
 
     public GameObject droneRoot;
+    public GameObject pieceRoot;
     public GameObject dronePrefab;
-    public List<GameObject> piecesList;
+    public GameObject piecePrefab;
+    public List<Mesh> piecesList;
+    public Material pieceMaterialActive;
     public GameObject Floor;
     public int maxDronesAlive = 5;
     public float generationRateSeconds = 2.0f;
     public float targetHeight = 2.0f;
+
 
     private float timer = 0.0f;
     private Vector2 spawnBoundsX;
@@ -56,10 +60,12 @@ public class DroneGenerator : MonoBehaviour
                 zPos = Random.Range(spawnBoundsY.x, spawnBoundsY.y);
             }
 
-            GameObject DronePiece = piecesList[Random.Range(0, piecesList.Count)];
+            Mesh DronePiece = piecesList[Random.Range(0, piecesList.Count)];
 
             GameObject Created = Instantiate(dronePrefab, new Vector3(xPos, targetHeight, zPos), Quaternion.identity, droneRoot.transform);
-            Created.GetComponent<DroneDrop>().piecePrefab = DronePiece;
+            Created.GetComponent<DroneDrop>().piecePrefab = piecePrefab;
+            Created.GetComponent<DroneDrop>().piecePrefab.GetComponent<MeshFilter>().mesh = DronePiece;
+            Created.GetComponent<DroneDrop>().piecePrefab.AddComponent<MeshCollider>();
 
         }
     }
@@ -76,5 +82,13 @@ public class DroneGenerator : MonoBehaviour
         {
             timer -= Time.deltaTime;
         }
+        if(droneRoot.transform.childCount > 0)
+        {
+            droneRoot.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Renderer>().material = pieceMaterialActive;
+        }
+
+        if (Input.GetMouseButtonDown(0)) DropPieceFromDrone();
     }
+
+    void DropPieceFromDrone() { return; }
 }
