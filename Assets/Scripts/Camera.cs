@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -8,9 +9,8 @@ public class CameraOrbit : MonoBehaviour
     [SerializeField] public Transform targetperspective;
     [SerializeField] public Transform targettopelement;
     [SerializeField] public float CameraHeight;
-
-    [SerializeField] public GameObject PieceToSpawn;
-
+    [SerializeField] public List<GameObject> namesOfDestroyedObjects = new List<GameObject>();
+    
     public float rotationSpeed = 80f;
     private float distance     = 0.5f;
 
@@ -28,7 +28,7 @@ public class CameraOrbit : MonoBehaviour
     {
         if (targetperspective == null || targettopelement == null)
         {
-            Debug.LogError("Faltan targets por determinar.");
+            Debug.LogError("Faltan targets por determinar.");   
             return;
         }
 
@@ -36,6 +36,9 @@ public class CameraOrbit : MonoBehaviour
         offset         = transform.position - targetperspective.position;
         distance       = offset.magnitude * distance;
         CameraHeight   = Quaternion.LookRotation(offset).eulerAngles.y;
+
+        targetperspective = targetperspective.GetChild(0);
+        targettopelement  = targettopelement.GetChild(1);
     }
 
     void Update()
@@ -47,8 +50,6 @@ public class CameraOrbit : MonoBehaviour
             distance -= Time.deltaTime;
         if (Input.GetKey(KeyCode.S))
             distance += Time.deltaTime;
-
-
 
         // cambiar tipo camara
         if (Input.GetKeyDown(KeyCode.Space))
@@ -64,11 +65,11 @@ public class CameraOrbit : MonoBehaviour
                 
                 CameraHeight += inputX * rotationSpeed * Time.deltaTime;
 
-                Quaternion newRotation = Quaternion.Euler(0, CameraHeight, 0);
-                Vector3 newPosition = targetperspective.position - (newRotation * Vector3.forward * distance);
+                Quaternion newRotation  = Quaternion.Euler(0, CameraHeight, 0);
+                Vector3 newPosition     = targetperspective.position - (newRotation * Vector3.forward * distance);
 
-                transform.position = newPosition;
-                transform.position = new Vector3(transform.position.x, transform.position.y + 10, transform.position.z);
+                transform.position      = newPosition;
+                transform.position      = new Vector3(transform.position.x, transform.position.y + 10, transform.position.z);
 
                 /*
                 if(Input.GetKeyDown(KeyCode.E))
@@ -98,7 +99,7 @@ public class CameraOrbit : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(PieceToSpawn, targettopelement.position, Quaternion.identity);
+            //Instantiate(PieceToSpawn, targettopelement.position, Quaternion.identity);
 
         }
     }

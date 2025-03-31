@@ -59,6 +59,7 @@ public class DroneGenerator : MonoBehaviour
             GameObject DronePiece = piecesList[Random.Range(0, piecesList.Count)];
 
             GameObject Created = Instantiate(dronePrefab, new Vector3(xPos, targetHeight, zPos), Quaternion.identity, droneRoot.transform);
+            Debug.Log(Created.name);
             Created.GetComponent<DroneDrop>().piecePrefab = DronePiece;
 
         }

@@ -141,4 +141,9 @@ MonoBehaviour:
   targettopelement: {fileID: 0}
   CameraHeight: 5
   PieceToSpawn: {fileID: 0}
+  namesOfDestroyedObjects:
+  - {fileID: 0}
   rotationSpeed: 80
+  heightChangeSpeed: 1
+  minHeight: 1
+  maxHeight: 100

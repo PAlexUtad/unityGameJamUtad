@@ -430,8 +430,15 @@ MonoBehaviour:
   targetperspective: {fileID: 819029938}
   targettopelement: {fileID: 1675317640}
   CameraHeight: 5
-  cube: {fileID: 8585675145598112128, guid: cecc64f8b57ef00488509a4bd5962557, type: 3}
+  PieceToSpawn: {fileID: 0}
+  namesOfDestroyedObjects:
+  - {fileID: 6223372586664389701, guid: d48a20eb03e16164487c8963362d3b99, type: 3}
+  - {fileID: 6223372586664389701, guid: b1c2b6f787787334988df34cee0c9250, type: 3}
+  - {fileID: 6223372586664389701, guid: 4dfb485abddcb7840ad2fdf9dce0a4c1, type: 3}
   rotationSpeed: 80
+  heightChangeSpeed: 1
+  minHeight: 1
+  maxHeight: 100
 --- !u!1 &649999872
 GameObject:
   m_ObjectHideFlags: 0
