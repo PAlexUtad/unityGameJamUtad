@@ -7,7 +7,10 @@ public class UITarget : MonoBehaviour
 {
     public TMP_Text tex;
     public float target = 300;
-   
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
         tex.text = target.ToString();

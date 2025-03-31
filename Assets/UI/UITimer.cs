@@ -9,7 +9,10 @@ public class UITimer : MonoBehaviour
     public float countdown = 300;
     float time_elapsed;
     float initial_value;
-
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
         initial_value = countdown;

@@ -10,12 +10,19 @@ using System.Reflection;
 public class UIVisManager : MonoBehaviour
 {
     public List<GameObject> UIObjects;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         disableAll();
         enableObject(0);
         enableObject(1);
+        enableObject(4);
     }
 
     public void enableObject(int index)

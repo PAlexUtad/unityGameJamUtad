@@ -8,7 +8,10 @@ public class UIScore : MonoBehaviour
     public TMP_Text tex;
     public int PiecesAmt;
     public float TowerHeight;
-
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
     }

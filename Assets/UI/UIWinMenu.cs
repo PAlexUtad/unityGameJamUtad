@@ -9,6 +9,14 @@ public class UIWinMenu : MonoBehaviour
     public Button NextLevelButton;
     public string NextSceneName;
     public Button QuitButton;
+
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+
     // Start is called before the first frame update
 
     void Start()
@@ -27,6 +35,7 @@ public class UIWinMenu : MonoBehaviour
     void TaskWithParameters(string message)
     {
         SceneManager.LoadScene(message);   
+
     }
 }
 

@@ -8,6 +8,13 @@ public class UIRestartMenu : MonoBehaviour
 {
     public Button RestartButton;
     public Button QuitButton;
+
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     // Start is called before the first frame update
 
     void Start()
