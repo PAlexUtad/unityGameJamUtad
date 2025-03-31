@@ -84,7 +84,8 @@ public class DroneGenerator : MonoBehaviour
         }
         if(droneRoot.transform.childCount > 0)
         {
-            droneRoot.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Renderer>().material = pieceMaterialActive;
+            if(droneRoot.transform.GetChild(0).childCount > 0)
+                droneRoot.transform.GetChild(0).GetChild(0).GetComponent<Renderer>().material = pieceMaterialActive;
         }
 
         if (Input.GetMouseButtonDown(0)) DropPieceFromDrone();
