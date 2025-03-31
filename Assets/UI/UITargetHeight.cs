@@ -6,13 +6,17 @@ using TMPro;
 public class UITarget : MonoBehaviour
 {
     public TMP_Text tex;
-    public float target = 300;
+    public float target;
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
     }
     void Start()
     {
+        //gets the targetHeight
+        target = ManagerTarget.Instance.targetHeight;
+        //
+        
         tex.text = target.ToString();
     }
 
@@ -23,5 +27,11 @@ public class UITarget : MonoBehaviour
             tex.text = target.ToString();
         }
     }
+    
+    /*public void SetTarget(float newTarget)
+    {
+        target = newTarget;
+        ManagerTarget.Instance.targetHeight = newTarget;
+    }*/
 
 }
