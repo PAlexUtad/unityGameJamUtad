@@ -13,10 +13,11 @@ public class DroneGenerator : MonoBehaviour
     public GameObject piecePrefab;
     public List<Mesh> piecesList;
     public Material pieceMaterialActive;
+    public Material pieceMaterialFalling;
     public GameObject Floor;
-    public int maxDronesAlive = 5;
-    public float generationRateSeconds = 2.0f;
+    public float generationRateSeconds = 1.0f;
     public float targetHeight = 2.0f;
+    private int maxDronesAlive = 1;
 
 
     private float timer = 0.0f;
@@ -64,8 +65,7 @@ public class DroneGenerator : MonoBehaviour
 
             GameObject Created = Instantiate(dronePrefab, new Vector3(xPos, targetHeight, zPos), Quaternion.identity, droneRoot.transform);
             Created.GetComponent<DroneDrop>().piecePrefab = piecePrefab;
-            Created.GetComponent<DroneDrop>().piecePrefab.GetComponent<MeshFilter>().mesh = DronePiece;
-            Created.GetComponent<DroneDrop>().piecePrefab.AddComponent<MeshCollider>();
+            Created.GetComponent<DroneDrop>().pieceMesh = DronePiece;
 
         }
     }
@@ -90,5 +90,9 @@ public class DroneGenerator : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) DropPieceFromDrone();
     }
 
-    void DropPieceFromDrone() { return; }
+    void DropPieceFromDrone() 
+    {
+        droneRoot.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Renderer>().material = pieceMaterialFalling;
+        return; 
+    }
 }

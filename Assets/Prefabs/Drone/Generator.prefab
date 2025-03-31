@@ -55,7 +55,17 @@ MonoBehaviour:
   - {fileID: -8678823145569952518, guid: 90f8e10aa0965f046a6dd9e08bf2ea6d, type: 3}
   - {fileID: -5053925668127403250, guid: 90f8e10aa0965f046a6dd9e08bf2ea6d, type: 3}
   - {fileID: 2212009239438826721, guid: 90f8e10aa0965f046a6dd9e08bf2ea6d, type: 3}
+  - {fileID: -2228417370725966487, guid: 90f8e10aa0965f046a6dd9e08bf2ea6d, type: 3}
+  - {fileID: -3329902420748629119, guid: 90f8e10aa0965f046a6dd9e08bf2ea6d, type: 3}
+  - {fileID: 8552134717624371188, guid: 90f8e10aa0965f046a6dd9e08bf2ea6d, type: 3}
+  - {fileID: -2477511411847689622, guid: 90f8e10aa0965f046a6dd9e08bf2ea6d, type: 3}
+  - {fileID: 8385836491182413749, guid: 90f8e10aa0965f046a6dd9e08bf2ea6d, type: 3}
+  - {fileID: -153830957423991239, guid: 90f8e10aa0965f046a6dd9e08bf2ea6d, type: 3}
+  - {fileID: -5741174448488666723, guid: 90f8e10aa0965f046a6dd9e08bf2ea6d, type: 3}
+  - {fileID: 7807538432633192378, guid: 90f8e10aa0965f046a6dd9e08bf2ea6d, type: 3}
+  - {fileID: -2865104911859505335, guid: 90f8e10aa0965f046a6dd9e08bf2ea6d, type: 3}
   pieceMaterialActive: {fileID: 2100000, guid: 2ba046b25d5df544085f1e8eb999fd22, type: 2}
+  pieceMaterialFalling: {fileID: 0}
   Floor: {fileID: 5158205743829966469, guid: 29c553f4c4b605a4494b4e464e4fb7d1, type: 3}
   maxDronesAlive: 5
   generationRateSeconds: 2
